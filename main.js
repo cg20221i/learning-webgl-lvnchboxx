@@ -26,7 +26,7 @@ function main() {
     gl.useProgram(shaderProgram);
 
           // coloring
-    gl.clearColor(8.0, 0.0, 7.0, 2.0);
+    gl.clearColor(0, 0.56, 0.48, 0.0); 
   
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
