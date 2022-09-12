@@ -24,8 +24,9 @@ function main() {
     gl.attachShader(shaderProgram, fragmentShader);
     gl.linkProgram(shaderProgram);
     gl.useProgram(shaderProgram);
+
           // coloring
-    gl.clearColor(1.0, 1.0, 0.79, 1.0);
+    gl.clearColor(8.0, 0.0, 7.0, 2.0);
   
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
