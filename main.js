@@ -19,13 +19,13 @@ function main() {
     gl.compileShader(fragmentShader);
   
   
-    var shaderProgram = gl.createProgram();
+    var shaderProgram = gl.createProgram(); 
     gl.attachShader(shaderProgram, vertexShader);
     gl.attachShader(shaderProgram, fragmentShader);
     gl.linkProgram(shaderProgram);
     gl.useProgram(shaderProgram);
-  
-    gl.clearColor(1.0, 0.75, 0.79, 1.0);
+          // coloring
+    gl.clearColor(1.0, 1.0, 0.79, 1.0);
   
     gl.clear(gl.COLOR_BUFFER_BIT);
   }
