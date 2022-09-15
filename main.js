@@ -5,14 +5,14 @@ function main() {
     var gl = canvas.getContext("experimental-webgl");
   // vertecies
 
-    var vertices = 
+    var vertices = `
     [1.0, 1.0, 0.5, 0.5, 0.0, 0.0, -0.5, -0.5 ];
 
       // create a linkedlist for storingthe vertecies in gpu
       var buffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertecies), gl.STATIC_DRAW); // allocation
-
+      `;
       
 // vertex shader
     var vertexShaderCode = `
