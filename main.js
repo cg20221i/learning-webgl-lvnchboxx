@@ -5,20 +5,20 @@ function main() {
     var gl = canvas.getContext("experimental-webgl");
   // vertecies
 
-    var vertices = `
-    [1.0, 1.0, 0.5, 0.5, 0.0, 0.0, -0.5, -0.5 ];
+    var vertices = 
+    [0.8, 0.8, 0.5, 0.5, 0.0, 0.0, -0.5, -0.5 ];
 
       // create a linkedlist for storingthe vertecies in gpu
       var buffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertecies), gl.STATIC_DRAW); // allocation
-      `;
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW); // allocation
+      
       
 // vertex shader
     var vertexShaderCode = `
     attribute vec2 aPosition; 
     void main  (){
-    gl_PointSize = 30.0;
+    gl_PointSize = 10.0;
     gl_Position = vec4(aPosition, 0.0, 1.0);
     }
     `;
@@ -49,7 +49,6 @@ function main() {
 
     var aPosition = gl.getAttribLocation(shaderProgram, "aPosition");
     gl.vertexAttribPointer(aPosition, 2, gl.FLOAT, false, 0, 0);  
-    
     gl.enableVertexAttribArray(aPosition);
 
           // coloring the canvas
@@ -57,7 +56,7 @@ function main() {
   
     gl.clear(gl.COLOR_BUFFER_BIT);
     //drawing dot
-      gl.drawArrays(gl.TRIANGLES_FAN, 0, 4);
+      gl.drawArrays(gl.TRIANGLE, 0, 4);
 
 
 
